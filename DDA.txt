@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int x0,x1,y0,y1;
+    printf("Enter first co-ordinate = ");
+    scanf("%d",&x0);
+    printf("Enter second co-ordinate = ");
+    scanf("%d",&y0);
+    printf("Enter first co-ordinate = ");
+    scanf("%d",&x1);
+    printf("Enter second co-ordinate = ");
+    scanf("%d",&y1);
+
+    int dx=x1-x0;
+    int dy=y1-y0;
+    
+    float m=dy/dx;
+
+    int steps;
+
+    if(abs(dx) > abs(dy))
+    {
+       steps=abs(dx);
+    }
+    else
+    {
+       steps=abs(dy);
+    }
+
+    int x-increment=dx/(float)steps;
+    int y-increment=dy/(float)steps;
+    int xp,yp,xp1,yp1;
+
+     xp=x;
+     yp=y;
+
+    for(int i=0;i<steps;i++)
+    {
+       if(m<1)
+       {
+          xp1=(1+x);
+          yp1=(m+y);
+       }
+       else if(m==1)
+       {
+          xp1=(1+x);
+          yp1=(1+y);
+       }
+       else
+       {
+          xp1=(x+(1/m));
+          yp1=(1+y);
+       }
+
+       putpixel(round(xp1),round(yp1));
+       x=xp1;
+       y=yp1;
+
+     }
+    
+}
